@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <link rel='stylesheet' href="/stylesheets/bulma.css">
+    <script src="//cdn.opalrb.org/opal/0.10.1/opal.min.js"></script>
+  </head>
+  <body>
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Trona
+          </h1>
+          <h2 class="subtitle">
+            Chrome DevTools Custom Formatter for Opal
+          </h2>
+          <img src="/images/preview.png">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Installation</h1>
+        <hr>
+        <div class="content">
+          <ol>
+            <li>Make sure you are using Chrome</li>
+            <li>Drag <span class="tag is-dark is-medium"><a style="color: inherit;" href="javascript: (function(){if(window.Opal) {var script = document.createElement('script');script.setAttribute('src', '//zetachang.github.io/trona-preview/dist/trona.min.js');script.onload=function(){Opal.Trona.$install_formatter();};document.body.appendChild(script);} else {alert('Opal is not defined in global context.');}})()">Trona</a></span> to your bookmark bar. </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Usage</h1>
+        <hr>
+        <div class="content">
+          <ol>
+            <li>Make sure you are in a Opal Ruby app. (e.g. this page)</li>
+            <li>Click the bookmarklet.</li>
+            <li>From now on, Ruby object log by <code>console</code> will be formatted for easier inspection.</li>
+            <li>Try type <code>Opal.hash({a: 10})</code>in console or <a href="javascript: console.log(Opal.hash({a: 10}))">
+              <span class="tag">Run</span>
+            </a>,
+              and you will see it's formatted as a Hash object.
+
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">FAQ</h1>
+        <hr>
+        <div class="content">
+          <h1>Why <code>puts</code> not work?</h1>
+          <p>
+            <code>Kernal.puts</code> will transform object to <code>String</code>, thus the output will remain plain text.
+            Require <code>console</code> and use <code>$console.log</code> instead.
+            <pre><code>require <span style='color:#0000e6; '>"console"</span>
+$console<span style='color:#808030; '>.</span>log <span style='color:#800080; '>{</span><span style='color:#005fd2; '>a</span>: <span style='color:#008c00; '>10</span><span style='color:#808030; '>,</span> <span style='color:#005fd2; '>foo</span>: :<span style='color:#005fd2; '>bar</span><span style='color:#800080; '>}</span>
+</code></pre>
+          </p>
+          <h1>Will Trona be open sourced?</h1>
+          <p>
+            <strong>Yes!</strong> Making the tool open sourced is definitely planned :)
+            Feel free to <a href="https://github.com/zetachang/trona-preview/issues/new" target="_blank">open an issue</a> if you got any problem.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <strong>Trona</strong> by <a href='https://github.com/zetachang'>David Chang</a>
+          ,this website is hosted at <a href="https://github.com/zetachang/trona-preview">Github</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
